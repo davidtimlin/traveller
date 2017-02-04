@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Multi-context commands read me</title>
+</head>
+<body>
+    <div>
+        <h1><i>Reference commands for multiple EF contexts in the same project.</i></h1>
+    </div>
+    <div>
+        <p><h2>IdentityContext</h2></p>
+        <hr />
+        <ul>
+            <li>Enable migrations:
+                <br/>
+            Enable-Migrations -ContextTypeName TravellerMVC.DataContexts.User.UserDbContext -MigrationsDirectory DataContexts\User\Migrations
+            </li>
+            <li>Add migration:
+                <br />
+            Add-Migration -ConfigurationTypeName TravellerMVC.DataContexts.User.Migrations.Configuration -Name "NAME"
+            </li>
+            <li>Update database:
+                <br />
+            Update-Database -ConfigurationTypeName TravellerMVC.DataContexts.User.Migrations.Configuration
+            </li>
+        </ul>
+    </div>
+    <div>
+        <p><h2>TravellerContext</h2></p>
+        <hr />
+        <ul>
+            <li>Enable migrations:
+                <br />
+                Enable-Migrations -ContextTypeName TravellerMVC.DataContexts.Traveller.TravellerDbContext -MigrationsDirectory DataContexts\Traveller\Migrations
+            </li>
+            <li>Add migration:
+                <br />
+                Add-Migration -ConfigurationTypeName TravellerMVC.DataContexts.Traveller.Migrations.Configuration -Name "NAME"
+            </li>
+            <li>Update database:
+                <br />
+                Update-Database -ConfigurationTypeName TravellerMVC.DataContexts.Traveller.Migrations.Configuration
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
